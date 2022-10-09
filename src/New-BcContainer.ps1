@@ -1,22 +1,20 @@
 ﻿
-$containerName = 'bcserver'
-$licenseFile = 'C:\temp\license.flf'
+$containerName = 'bc21'
 
-$isolation = Hyper-V
+$Credential = New-Object pscredential 'admin', (ConvertTo-SecureString -String '1234' -AsPlainText -Force)
+
+$isolation = 'hyperv'
 $useSSL = $false
 
 $alwaysPull = $false
 
 $enableTaskScheduler = $true
 
-$WebClientPort = 80
-
-
-
 New-BcContainer `
     -accept_eula `
+    -auth UserPassword `
+    -artifactUrl (Get-BCArtifactUrl -type Sandbox -country 'us' -version '21' -Select Latest) `
     -containerName $containerName `
-    -licenseFile $licenseFile `
     -Credential $Credential `
     -isolation $isolation `
     -shortcuts None `
@@ -24,6 +22,4 @@ New-BcContainer `
     -enableTaskScheduler:$enableTaskScheduler `
     -alwaysPull: $alwaysPull `
     -useSSL: $useSSL `
-    -installCertificateOnHost: $useSSL `
-    -WebClientPort $WebClientPort `
-    
+    -installCertificateOnHost: $useSSL
