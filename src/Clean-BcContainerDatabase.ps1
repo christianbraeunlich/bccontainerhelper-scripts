@@ -1,24 +1,28 @@
 ﻿
 $containerName = 'bcserver'
-$saveData = $true
-$onlySaveBaseAppData = $false
-$doNotUnpublish = $true
+$companyName = 'CRONUS USA, Inc.'
+
 $useNewDatabase = $false
+
+$saveData = $false
+$onlySaveBaseAppData = $false
+
+$copyTables = $false
 $doNotCopyEntitlements = $true
-$keepBaseApp = $true
-$keepApps = $false
-$copyTables = $true
-$companyName = 'CRONUS'
+$doNotUnpublish = $false
+
+$keepApps = @('')
+$keepBaseApp = $false
 
 Clean-BcContainerDatabase `
     -containerName $containerName `
+    -companyName $companyName `
+    -copyTables: $copyTables `
+    -doNotCopyEntitlements: $doNotCopyEntitlements `
+    -doNotUnpublish: $doNotUnpublish `
+    -evaluationCompany: $evaluationCompany `
     -saveData: $saveData `
     -onlySaveBaseAppData: $onlySaveBaseAppData `
-    -doNotUnpublish: $doNotUnpublish `
-    -useNewDatabase: $use `
-    -doNotCopyEntitlements: $doNot `
-    -keepBaseApp: $keep `
+    -useNewDatabase: $useNewDatabase `
     -keepApps: $keepApps `
-    -copyTables: $copyTables `
-    -companyName $companyName `
-    -evaluationCompany: $evaluationCompany
+    -keepBaseApp: $keepBaseApp

@@ -2,13 +2,13 @@
 $containerName = 'bcserver'
 $tenant = 'default'
 
-$Credential = New-Object pscredential 'admin', (ConvertTo-SecureString -String 'P@ssword1' -AsPlainText -Force)
+$Credential = New-Object pscredential 'admin', (ConvertTo-SecureString -String '1234' -AsPlainText -Force)
 
 $ChangePasswordAtNextLogOn = $false
 $PermissionSetId = ''
 $AppName = ''
 $AppPublisher = ''
-$assignPremiumPlan = ''
+$assignPremiumPlan = $true
 
 New-BcContainerBcUser `
     -containerName $containerName `

@@ -1,6 +1,6 @@
 ﻿
 $containerName = 'bcserver'
-$licenseFile = ''
+$licenseFile = 'C:\ProgramData\BcContainerHelper\temp\license.flf'
 
 Import-BcContainerLicense `
     -containerName $containerName `

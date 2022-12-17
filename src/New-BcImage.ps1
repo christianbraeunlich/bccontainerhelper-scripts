@@ -1,16 +1,14 @@
 ﻿
-
-$imageName = 'otter'
+$imageName = 'bcimage'
 
 $artifactUrl = Get-BCArtifactUrl -type OnPrem -country 'us' -version '20' -select Latest -doNotCheckPlatform:$true
 $baseImage = ''
 
-$licenseFile = ''
+$licenseFile = 'C:\ProgramData\BcContainerHelper\license.flf'
 $memory = '8G'
 $multitenant = $true
-$isolation = ''
+$isolation = 'hyperv' # process, hyperv
 $skipDatabase = $false
-
 
 $includeTestToolkit = $false
 $includeTestLibrariesOnly = $false
@@ -28,7 +26,7 @@ New-BcImage `
     -licenseFile $licenseFile `
     -multitenant:$multitenant `
     -memory $memory `
-    -isolation hyperv `
+    -isolation $isolation `
     -includeTestToolkit:$includeTestToolkit `
     -includeTestLibrariesOnly:$includeTestLibrariesOnly `
     -includeTestFrameworkOnly:$includeTestFrameworkOnly `
@@ -36,5 +34,4 @@ New-BcImage `
     -skipIfImageAlreadyExists: $skipIfImageAlreadyExists `
     -runSandboxAsOnPrem:$runSandboxAsOnPrem `
     -filesOnly: $filesOnly `
-    -skipDatabase:$skipDatabase `
-    
+    -skipDatabase:$skipDatabase

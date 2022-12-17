@@ -1,8 +1,6 @@
 ﻿
-$type = Sandbox # OnPrem , Sandbox
-
-$country = 'de'
-$version = '20'
+$country = 'us'
+$version = '21'
 
 $doNotCheckPlatform = $false
 

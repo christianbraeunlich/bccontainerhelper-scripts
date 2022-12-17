@@ -2,7 +2,7 @@
 $containerName = 'bcserver'
 $tenant = 'default'
 
-$bakFolder = ''
+$bakFolder = 'C:\ProgramData\BcContainerHelper\temp'
 $bakFile = ''
 $databaseName = ''
 $databaseFolder = ''
@@ -11,6 +11,6 @@ Restore-DatabasesInBcContainer `
    -containerName $containerName `
    -tenant $tenant `
    -bakFolder $bakFolder `
-   -bakFile $bakFile `
-   -databaseName $databaseName `
-   -databaseFolder $databaseFolder 
+   #-bakFile $bakFile `
+   #-databaseName $databaseName `
+   #-databaseFolder $databaseFolder 

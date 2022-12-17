@@ -1,7 +1,7 @@
 ﻿
 $containerName = 'bcserver'
 $tenant = 'default'
-$companyName = 'CRONUS Otter'
+$companyName = 'CRONUS US, Ltd.'
 $evaluationCompany = $true
 
 New-CompanyInBcContainer `

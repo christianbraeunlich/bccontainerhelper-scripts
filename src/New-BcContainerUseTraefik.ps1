@@ -1,10 +1,13 @@
 ﻿
 $containerName = 'bcserver'
-$Credential = New-Object pscredential 'admin', (ConvertTo-SecureString -String 'P@ssword1' -AsPlainText -Force)
+$Credential = New-Object pscredential 'admin', (ConvertTo-SecureString -String '1234' -AsPlainText -Force)
 
-$isolation = 'hyperv'
+$isolation = 'hyperv' # process, hyperv
 
 $enableTaskScheduler = $true
+
+$useTraefik = $true
+$useSSL = $true
 
 New-BcContainer `
     -accept_eula `
@@ -15,8 +18,8 @@ New-BcContainer `
     -shortcuts None `
     -updateHosts `
     -enableTaskScheduler:$enableTaskScheduler `
-    -useTraefik `
-    -useSSL `
+    -useTraefik $useTraefik `
+    -useSSL: $useSSL `
     -installCertificateOnHost `
-    -PublicDnsName 'cbnotebook'
+    -PublicDnsName 'hostname'
     

@@ -2,8 +2,8 @@
 $containerName = 'bcserver'
 $tenant = 'default'
 
-$backFolder = ''
-$compress = $true
+$bakFolder = 'C:\ProgramData\BcContainerHelper\temp' # shared folder
+$compress = $false
 
 Backup-BcContainerDatabases `
     -containerName $containerName `

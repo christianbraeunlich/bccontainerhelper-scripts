@@ -1,5 +1,5 @@
 ﻿
-$containerName = 'bc21'
+$containerName = 'bcserver'
 
 $Credential = New-Object pscredential 'admin', (ConvertTo-SecureString -String '1234' -AsPlainText -Force)
 

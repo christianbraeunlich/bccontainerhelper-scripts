@@ -1,5 +1,6 @@
 ﻿
 $containerName = 'bcserver'
+$tenantId = ''
 
 $doNotCopyDatabase = $true
 $allowAppDatabaseWrite = $false
