@@ -1,6 +1,8 @@
 # BcContainerHelper Scripts
 
-> Keep the scripts!
+> “Keep the script, not the Container.”
+>
+> -- <cite>Freddy Kristiansen</cite>
 
 ## License
 
