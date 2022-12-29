@@ -5,15 +5,14 @@ $Credential = New-Object pscredential 'admin', (ConvertTo-SecureString -String '
 
 $isolation = 'hyperv'
 $useSSL = $false
-
+$includeAL = $true
 $alwaysPull = $false
-
 $enableTaskScheduler = $true
 
 New-BcContainer `
     -accept_eula `
     -auth UserPassword `
-    -artifactUrl (Get-BCArtifactUrl -type Sandbox -country 'us' -version '21' -Select Latest) `
+    -artifactUrl (Get-BCArtifactUrl -type Sandbox -country 'w1' -version '21' -Select Latest) `
     -containerName $containerName `
     -Credential $Credential `
     -isolation $isolation `
@@ -22,4 +21,6 @@ New-BcContainer `
     -enableTaskScheduler:$enableTaskScheduler `
     -alwaysPull: $alwaysPull `
     -useSSL: $useSSL `
-    -installCertificateOnHost: $useSSL
+    -installCertificateOnHost: $useSSL `
+    -includeAL: $includeAL `
+    -doNotExportObjectsToText
